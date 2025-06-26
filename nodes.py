@@ -13,6 +13,8 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 
 if not "mmaudio" in folder_paths.folder_names_and_paths:
     folder_paths.add_model_folder_path("mmaudio", os.path.join(folder_paths.models_dir, "mmaudio"))
+    if os.path.exists("/stable-diffusion-cache/models"):
+        folder_paths.add_model_folder_path("mmaudio", "/stable-diffusion-cache/models/mmaudio")
 
 
 from .mmaudio.eval_utils import generate
